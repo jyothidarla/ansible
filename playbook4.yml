@@ -1,0 +1,28 @@
+---
+- name: configuring apache2 on 2 managed nodes
+  hosts: all
+  tasks:
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: edit the index.xml file
+      copy: 
+       content: "intelliQit"
+       dest: /var/www/html/index.html
+    - name: restart the apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: check apache2 response
+      uri:
+        url: http://172.31.43.255
+        status_code: 200
+    - name: check apache2 response
+      uri: 
+        url: http://172.31.36.164
+        status_code: 200
+
+...         
+

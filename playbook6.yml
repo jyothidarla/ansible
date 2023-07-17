@@ -1,0 +1,16 @@
+---
+- name: send file from sv1 to sv2
+  hosts: 172.31.43.255
+  tasks: 
+   - name: fetch the file from sv1 to controller
+     fetch: 
+       src: file1
+       dest:  /tmp
+- name: copy the fie1 from controller and send into sv2
+  hosts: 172.31.36.164
+  tasks:
+   - name: copy file
+     copy:
+        src: /tmp/172.31.43.255
+        dest: /tmp
+... 

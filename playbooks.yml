@@ -1,12 +1,12 @@
 ---
--name: create user
-hosts: all
-tasks: 
-  -name: user creation
-  usr:
-    name: raju
-    uid: 1245
-    password: 45678
-    home: /home/ubuntu/raju
-    shell: /bin/bash
+- name: create user
+  hosts: all
+  tasks: 
+   - name: user creation
+     user:
+      name: rani
+      uid: 1456
+      password: 44444
+      home: /home/ubuntu/rani
+      shell: /bin/bash
 ...
