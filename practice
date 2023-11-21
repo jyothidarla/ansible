@@ -1,0 +1,16 @@
+ansible commands.
+@shell ::
+#ansible all -m shell -a 'free -m > file10'
+output on node :
+            file10  file4  grep    r1         t1.txt  wget-log
+            file3   file5  jyothi  slave.jar  t2.txt  workspace
+            ubuntu@worker1:~$ cat file10
+                           total        used        free      shared  buff/cache   available
+            Mem:             949         297          91           0         560         495
+            Swap:              0  
+@file::
+#ansible all -m file 'name=/tmp/file1 state=touch owner=uma gr0up=root mode=770' -b
+>>>>>>>>>>>>COPY and FILE module are used to change th prmissions.
+            jyothi:x:123:41415:a regular user:/home/ubuntu/jyothi:/bin/bash
+            anu:x:1323:1323:a normal user:/home/ubuntu/anu://bin/bash
+            "/etc/passwd" 45L, 2446B   
