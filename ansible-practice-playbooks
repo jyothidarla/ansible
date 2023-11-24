@@ -1,0 +1,3 @@
+#create a playbook for installing apche2 server software download and copy content into server.
+# create a playbook for tomcat9.
+#variables: for global scope variables we create a playbook. this have hieght priority than play scope variables.
