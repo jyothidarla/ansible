@@ -1,0 +1,13 @@
+---
+- name: file creation and give comment
+  hosts: all
+  tasks:
+     - name: file creation
+       file:
+         name: /home/ubuntu/data.txt
+         state: touch 
+     - name: insert content using copy command
+       copy:
+          content: "hi, here enter data info"
+          dest: /home/ubuntu/data.txt
+...

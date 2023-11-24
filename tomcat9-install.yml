@@ -1,0 +1,37 @@
+---
+- name: configuring tomcat9 on two managed nodes
+  hosts: all
+  tasks: 
+    - name: install tomcat9
+      apt: 
+        name: tomcat9
+        state: present
+        update_cache: yes
+    - name: install tomcat9-admin
+      apt: 
+        name: tomcat9-admin
+        state: present
+        update_cache: yes
+    - name: copy tomcat-users.xml
+      copy: 
+        src: tomcat-users.xml
+        dest: /etc/tomcat9/
+    - name: change port
+      replace:
+        regexp: 8080
+        replace: 9090
+        path: /etc/tomcat9/server.xml
+    - name: restart the service
+      service:
+        name: tomcat9
+        state: restarted
+    - name: check url response
+      uri:
+        url: http://172.31.36.164
+        status_code: 200
+    - name: check response
+      uri:
+        url: http://172.31.36.164
+        status_code: 200 
+...
+

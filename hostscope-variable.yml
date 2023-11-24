@@ -1,0 +1,10 @@
+---
+- name: install firewald app using hostscope variables
+  hosts: webserver
+  tasks:
+    - name: install firewald
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...

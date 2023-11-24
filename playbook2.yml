@@ -1,11 +1,12 @@
 ---
--name: configuring apache2
- hosts: all
- tasks:
-  -name: install apache2
-   apt:
-    name: git
-    state: present
-    update_cache: yes
+- name: create user on all managed nodes
+  hosts: all
+  tasks:
+    - name: user creation
+      user:
+        name: udaya
+        password: udaya@123
+        uid: 152
+        shell: /bin/bash
+        comment: 'normal user'
 ...
-

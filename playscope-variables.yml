@@ -1,0 +1,15 @@
+---
+- name: install/uninstall s/w's 
+  hosts: all
+  vars:
+    - a: git
+    - b: present
+    - c: yes
+  tasks:
+    - name: install/uninstall s/ws
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+
+... 
