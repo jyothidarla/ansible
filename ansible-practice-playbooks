@@ -1,3 +1,13 @@
 #create a playbook for installing apche2 server software download and copy content into server.
 # create a playbook for tomcat9.
 #variables: for global scope variables we create a playbook. this have hieght priority than play scope variables.
+
+
+25/11/2023
+playscope varibles has been created by variable called "vars" which we will give after hosts or before tasks.
+> which has least priority than global scope varibles
+> which works like template for other application playbooks by passing global scope variables.
+
+Hostscope variables: single host and group of hosts
+
+we have creted group
