@@ -10,4 +10,20 @@ playscope varibles has been created by variable called "vars" which we will give
 
 Hostscope variables: single host and group of hosts
 
+>variabes in ansible are 3 types: 
+- global scope variables pattern--
+   create a playbook like:
+  --- 
+  - name:
+    apt:
+      name: "{{a}}"
+      state: "{{b}}"
+...
+ values pass though command: &ansible-playbook <playbook-name> --extra-vars "a=___ b=____ c=_____" -b
+
+- playscope variables pattern---------------
+
+
+- playscope variable
+- hostscope variables
 we have creted group
